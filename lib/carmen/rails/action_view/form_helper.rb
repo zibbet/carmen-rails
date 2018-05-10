@@ -208,7 +208,7 @@ module ActionView
                                                     html_options["multiple"] ||
                                                     html_options["size"].to_i > 1
 
-            value = options[:selected] ? options[:selected] : value(object)
+            value = options[:selected] ? options[:selected] : send(:value)
             priority_regions = options[:priority] || []
             opts = add_options(region_options_for_select(parent_region.subregions, value,
                                                         :priority => priority_regions),
